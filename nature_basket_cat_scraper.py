@@ -16,7 +16,7 @@ def link_generator(x=2):
     os.makedirs('data')
     for i in range(x):
 
-        driver = webdriver.Chrome(executable_path='C:\Jupyter Notebook\chromedriver_win32\chromedriver.exe')
+        driver = webdriver.Chrome()
 
         url = 'https://www.naturesbasket.co.in'
         driver.get(url)
