@@ -1,4 +1,4 @@
-""" Due to occasional inconsistent data , given code scrapes the website twice to get all category names and merges
+""" Due to occasional inconsistent data , given code scrapes the website twice (can be changed during function call) to get all category names and merges
 both files """
 
 from selenium import webdriver
