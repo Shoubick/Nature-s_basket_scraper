@@ -12,7 +12,7 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 
 
-def link_generator(x=2):
+def cat_generator(x=2):
     os.makedirs('data')
     for i in range(x):
 
@@ -34,9 +34,9 @@ def link_generator(x=2):
             file.write(item.text + '\n')
 
         sub_cat = soup.findAll('div', {'id': 'divCategoryPopup1'})
-        link_list = sub_cat[0].findAll('a')
-        for link in link_list:
-            file.write(link.text + '\n')
+        cat_list = sub_cat[0].findAll('a')
+        for cat in cat_list:
+            file.write(cat.text + '\n')
 
         file.close()
         driver.close()
@@ -45,20 +45,20 @@ def link_generator(x=2):
 
 
 def unify(x):
-    link_list = []
+    cat_list = []
     for i in range(x):
         filename = 'temp' + str(i) + '.txt'
         file = open(os.path.join('data', filename), 'r')
-        for link in file:
-            link_list.append(link)
+        for cat in file:
+            cat_list.append(cat)
         file.close()
 
-    unified_list = set(link_list)
+    unified_list = set(cat_list)
     file = open('category.txt', 'w')
-    for link in unified_list:
-        file.write(link)
+    for category in unified_list:
+        file.write(category)
     file.close()
 
 
 if __name__ == "__main__":
-    link_generator()
+    cat_generator()
