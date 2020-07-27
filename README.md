@@ -1,2 +1,2 @@
 # Nature-s_basket_scraper
-The scrapper writes the data to a csv file and saves the images of the products
+This scrapper collects data from naturesbasket.com and saves the data to csv file and images to the adjacent folder
